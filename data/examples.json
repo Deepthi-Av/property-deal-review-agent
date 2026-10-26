@@ -1,0 +1,490 @@
+[
+  {
+    "case_id": "clean",
+    "title": "Complete figures",
+    "description": "New deal totals $3,220/month and $94,000 cash to close.",
+    "is_synthetic": true,
+    "current": {
+      "deal_id": "new",
+      "name": "New purchase",
+      "as_of": "2026-10-23",
+      "source_text": "SYNTHETIC example: New purchase. All figures USD. Fixed-rate financing.\nPayment components below are separate; do not add an escrow total.\nPurchase price: USD 420,000.00 one-time.\nPrincipal and interest: USD 2,300.00 per month.\nProperty tax: USD 6,000.00 per year.\nHomeowners insurance: USD 1,800.00 per year.\nMortgage insurance: USD 120.00 per month.\nHOA fee: USD 150.00 per month.\nEstimated cash to close: USD 94,000.00 one-time."
+    },
+    "saved": {
+      "deal_id": "saved",
+      "name": "Previously reviewed deal",
+      "as_of": "2026-10-20",
+      "source_text": "SYNTHETIC example: Previously reviewed deal. All figures USD. Fixed-rate financing.\nPayment components below are separate; do not add an escrow total.\nPurchase price: USD 410,000.00 one-time.\nPrincipal and interest: USD 2,250.00 per month.\nProperty tax: USD 4,800.00 per year.\nHomeowners insurance: USD 1,500.00 per year.\nMortgage insurance: USD 0.00 per month.\nHOA fee: USD 125.00 per month.\nEstimated cash to close: USD 85,000.00 one-time."
+    },
+    "expected_facts": {
+      "current": [
+        {
+          "field": "purchase_price",
+          "amount": "420000",
+          "period": "once",
+          "quote": "Purchase price: USD 420,000.00 one-time.",
+          "provenance": "document"
+        },
+        {
+          "field": "principal_interest",
+          "amount": "2300",
+          "period": "monthly",
+          "quote": "Principal and interest: USD 2,300.00 per month.",
+          "provenance": "document"
+        },
+        {
+          "field": "property_tax",
+          "amount": "6000",
+          "period": "annual",
+          "quote": "Property tax: USD 6,000.00 per year.",
+          "provenance": "document"
+        },
+        {
+          "field": "home_insurance",
+          "amount": "1800",
+          "period": "annual",
+          "quote": "Homeowners insurance: USD 1,800.00 per year.",
+          "provenance": "document"
+        },
+        {
+          "field": "mortgage_insurance",
+          "amount": "120",
+          "period": "monthly",
+          "quote": "Mortgage insurance: USD 120.00 per month.",
+          "provenance": "document"
+        },
+        {
+          "field": "hoa",
+          "amount": "150",
+          "period": "monthly",
+          "quote": "HOA fee: USD 150.00 per month.",
+          "provenance": "document"
+        },
+        {
+          "field": "cash_to_close",
+          "amount": "94000",
+          "period": "once",
+          "quote": "Estimated cash to close: USD 94,000.00 one-time.",
+          "provenance": "document"
+        }
+      ],
+      "saved": [
+        {
+          "field": "purchase_price",
+          "amount": "410000",
+          "period": "once",
+          "quote": "Purchase price: USD 410,000.00 one-time.",
+          "provenance": "document"
+        },
+        {
+          "field": "principal_interest",
+          "amount": "2250",
+          "period": "monthly",
+          "quote": "Principal and interest: USD 2,250.00 per month.",
+          "provenance": "document"
+        },
+        {
+          "field": "property_tax",
+          "amount": "4800",
+          "period": "annual",
+          "quote": "Property tax: USD 4,800.00 per year.",
+          "provenance": "document"
+        },
+        {
+          "field": "home_insurance",
+          "amount": "1500",
+          "period": "annual",
+          "quote": "Homeowners insurance: USD 1,500.00 per year.",
+          "provenance": "document"
+        },
+        {
+          "field": "mortgage_insurance",
+          "amount": "0",
+          "period": "monthly",
+          "quote": "Mortgage insurance: USD 0.00 per month.",
+          "provenance": "document"
+        },
+        {
+          "field": "hoa",
+          "amount": "125",
+          "period": "monthly",
+          "quote": "HOA fee: USD 125.00 per month.",
+          "provenance": "document"
+        },
+        {
+          "field": "cash_to_close",
+          "amount": "85000",
+          "period": "once",
+          "quote": "Estimated cash to close: USD 85,000.00 one-time.",
+          "provenance": "document"
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "missing",
+    "title": "Missing insurance",
+    "description": "Insurance is absent, so the monthly total must remain unknown until confirmed.",
+    "is_synthetic": true,
+    "current": {
+      "deal_id": "new",
+      "name": "New purchase",
+      "as_of": "2026-10-23",
+      "source_text": "SYNTHETIC example: New purchase. All figures USD. Fixed-rate financing.\nPayment components below are separate; do not add an escrow total.\nPurchase price: USD 420,000.00 one-time.\nPrincipal and interest: USD 2,300.00 per month.\nProperty tax: USD 6,000.00 per year.\nMortgage insurance: USD 120.00 per month.\nHOA fee: USD 150.00 per month.\nEstimated cash to close: USD 94,000.00 one-time."
+    },
+    "saved": {
+      "deal_id": "saved",
+      "name": "Previously reviewed deal",
+      "as_of": "2026-10-20",
+      "source_text": "SYNTHETIC example: Previously reviewed deal. All figures USD. Fixed-rate financing.\nPayment components below are separate; do not add an escrow total.\nPurchase price: USD 410,000.00 one-time.\nPrincipal and interest: USD 2,250.00 per month.\nProperty tax: USD 4,800.00 per year.\nHomeowners insurance: USD 1,500.00 per year.\nMortgage insurance: USD 0.00 per month.\nHOA fee: USD 125.00 per month.\nEstimated cash to close: USD 85,000.00 one-time."
+    },
+    "expected_facts": {
+      "current": [
+        {
+          "field": "purchase_price",
+          "amount": "420000",
+          "period": "once",
+          "quote": "Purchase price: USD 420,000.00 one-time.",
+          "provenance": "document"
+        },
+        {
+          "field": "principal_interest",
+          "amount": "2300",
+          "period": "monthly",
+          "quote": "Principal and interest: USD 2,300.00 per month.",
+          "provenance": "document"
+        },
+        {
+          "field": "property_tax",
+          "amount": "6000",
+          "period": "annual",
+          "quote": "Property tax: USD 6,000.00 per year.",
+          "provenance": "document"
+        },
+        {
+          "field": "mortgage_insurance",
+          "amount": "120",
+          "period": "monthly",
+          "quote": "Mortgage insurance: USD 120.00 per month.",
+          "provenance": "document"
+        },
+        {
+          "field": "hoa",
+          "amount": "150",
+          "period": "monthly",
+          "quote": "HOA fee: USD 150.00 per month.",
+          "provenance": "document"
+        },
+        {
+          "field": "cash_to_close",
+          "amount": "94000",
+          "period": "once",
+          "quote": "Estimated cash to close: USD 94,000.00 one-time.",
+          "provenance": "document"
+        }
+      ],
+      "saved": [
+        {
+          "field": "purchase_price",
+          "amount": "410000",
+          "period": "once",
+          "quote": "Purchase price: USD 410,000.00 one-time.",
+          "provenance": "document"
+        },
+        {
+          "field": "principal_interest",
+          "amount": "2250",
+          "period": "monthly",
+          "quote": "Principal and interest: USD 2,250.00 per month.",
+          "provenance": "document"
+        },
+        {
+          "field": "property_tax",
+          "amount": "4800",
+          "period": "annual",
+          "quote": "Property tax: USD 4,800.00 per year.",
+          "provenance": "document"
+        },
+        {
+          "field": "home_insurance",
+          "amount": "1500",
+          "period": "annual",
+          "quote": "Homeowners insurance: USD 1,500.00 per year.",
+          "provenance": "document"
+        },
+        {
+          "field": "mortgage_insurance",
+          "amount": "0",
+          "period": "monthly",
+          "quote": "Mortgage insurance: USD 0.00 per month.",
+          "provenance": "document"
+        },
+        {
+          "field": "hoa",
+          "amount": "125",
+          "period": "monthly",
+          "quote": "HOA fee: USD 125.00 per month.",
+          "provenance": "document"
+        },
+        {
+          "field": "cash_to_close",
+          "amount": "85000",
+          "period": "once",
+          "quote": "Estimated cash to close: USD 85,000.00 one-time.",
+          "provenance": "document"
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "conflict",
+    "title": "Conflicting HOA amounts",
+    "description": "Two source lines disagree. A reviewer must confirm the monthly HOA amount.",
+    "is_synthetic": true,
+    "current": {
+      "deal_id": "new",
+      "name": "New purchase",
+      "as_of": "2026-10-23",
+      "source_text": "SYNTHETIC example: New purchase. All figures USD. Fixed-rate financing.\nPayment components below are separate; do not add an escrow total.\nPurchase price: USD 420,000.00 one-time.\nPrincipal and interest: USD 2,300.00 per month.\nProperty tax: USD 6,000.00 per year.\nHomeowners insurance: USD 1,800.00 per year.\nMortgage insurance: USD 120.00 per month.\nHOA fee: USD 150.00 per month.\nEstimated cash to close: USD 94,000.00 one-time.\nLender worksheet HOA fee: USD 190.00 per month."
+    },
+    "saved": {
+      "deal_id": "saved",
+      "name": "Previously reviewed deal",
+      "as_of": "2026-10-20",
+      "source_text": "SYNTHETIC example: Previously reviewed deal. All figures USD. Fixed-rate financing.\nPayment components below are separate; do not add an escrow total.\nPurchase price: USD 410,000.00 one-time.\nPrincipal and interest: USD 2,250.00 per month.\nProperty tax: USD 4,800.00 per year.\nHomeowners insurance: USD 1,500.00 per year.\nMortgage insurance: USD 0.00 per month.\nHOA fee: USD 125.00 per month.\nEstimated cash to close: USD 85,000.00 one-time."
+    },
+    "expected_facts": {
+      "current": [
+        {
+          "field": "purchase_price",
+          "amount": "420000",
+          "period": "once",
+          "quote": "Purchase price: USD 420,000.00 one-time.",
+          "provenance": "document"
+        },
+        {
+          "field": "principal_interest",
+          "amount": "2300",
+          "period": "monthly",
+          "quote": "Principal and interest: USD 2,300.00 per month.",
+          "provenance": "document"
+        },
+        {
+          "field": "property_tax",
+          "amount": "6000",
+          "period": "annual",
+          "quote": "Property tax: USD 6,000.00 per year.",
+          "provenance": "document"
+        },
+        {
+          "field": "home_insurance",
+          "amount": "1800",
+          "period": "annual",
+          "quote": "Homeowners insurance: USD 1,800.00 per year.",
+          "provenance": "document"
+        },
+        {
+          "field": "mortgage_insurance",
+          "amount": "120",
+          "period": "monthly",
+          "quote": "Mortgage insurance: USD 120.00 per month.",
+          "provenance": "document"
+        },
+        {
+          "field": "hoa",
+          "amount": "150",
+          "period": "monthly",
+          "quote": "HOA fee: USD 150.00 per month.",
+          "provenance": "document"
+        },
+        {
+          "field": "cash_to_close",
+          "amount": "94000",
+          "period": "once",
+          "quote": "Estimated cash to close: USD 94,000.00 one-time.",
+          "provenance": "document"
+        },
+        {
+          "field": "hoa",
+          "amount": "190",
+          "period": "monthly",
+          "quote": "Lender worksheet HOA fee: USD 190.00 per month.",
+          "provenance": "document"
+        }
+      ],
+      "saved": [
+        {
+          "field": "purchase_price",
+          "amount": "410000",
+          "period": "once",
+          "quote": "Purchase price: USD 410,000.00 one-time.",
+          "provenance": "document"
+        },
+        {
+          "field": "principal_interest",
+          "amount": "2250",
+          "period": "monthly",
+          "quote": "Principal and interest: USD 2,250.00 per month.",
+          "provenance": "document"
+        },
+        {
+          "field": "property_tax",
+          "amount": "4800",
+          "period": "annual",
+          "quote": "Property tax: USD 4,800.00 per year.",
+          "provenance": "document"
+        },
+        {
+          "field": "home_insurance",
+          "amount": "1500",
+          "period": "annual",
+          "quote": "Homeowners insurance: USD 1,500.00 per year.",
+          "provenance": "document"
+        },
+        {
+          "field": "mortgage_insurance",
+          "amount": "0",
+          "period": "monthly",
+          "quote": "Mortgage insurance: USD 0.00 per month.",
+          "provenance": "document"
+        },
+        {
+          "field": "hoa",
+          "amount": "125",
+          "period": "monthly",
+          "quote": "HOA fee: USD 125.00 per month.",
+          "provenance": "document"
+        },
+        {
+          "field": "cash_to_close",
+          "amount": "85000",
+          "period": "once",
+          "quote": "Estimated cash to close: USD 85,000.00 one-time.",
+          "provenance": "document"
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "over_limit",
+    "title": "Over the monthly limit",
+    "description": "Known monthly costs exceed the default buyer limit.",
+    "is_synthetic": true,
+    "current": {
+      "deal_id": "new",
+      "name": "New purchase",
+      "as_of": "2026-10-23",
+      "source_text": "SYNTHETIC example: New purchase. All figures USD. Fixed-rate financing.\nPayment components below are separate; do not add an escrow total.\nPurchase price: USD 420,000.00 one-time.\nPrincipal and interest: USD 3,000.00 per month.\nProperty tax: USD 6,000.00 per year.\nHomeowners insurance: USD 1,800.00 per year.\nMortgage insurance: USD 120.00 per month.\nHOA fee: USD 150.00 per month.\nEstimated cash to close: USD 94,000.00 one-time."
+    },
+    "saved": {
+      "deal_id": "saved",
+      "name": "Previously reviewed deal",
+      "as_of": "2026-10-20",
+      "source_text": "SYNTHETIC example: Previously reviewed deal. All figures USD. Fixed-rate financing.\nPayment components below are separate; do not add an escrow total.\nPurchase price: USD 410,000.00 one-time.\nPrincipal and interest: USD 2,250.00 per month.\nProperty tax: USD 4,800.00 per year.\nHomeowners insurance: USD 1,500.00 per year.\nMortgage insurance: USD 0.00 per month.\nHOA fee: USD 125.00 per month.\nEstimated cash to close: USD 85,000.00 one-time."
+    },
+    "expected_facts": {
+      "current": [
+        {
+          "field": "purchase_price",
+          "amount": "420000",
+          "period": "once",
+          "quote": "Purchase price: USD 420,000.00 one-time.",
+          "provenance": "document"
+        },
+        {
+          "field": "principal_interest",
+          "amount": "3000",
+          "period": "monthly",
+          "quote": "Principal and interest: USD 3,000.00 per month.",
+          "provenance": "document"
+        },
+        {
+          "field": "property_tax",
+          "amount": "6000",
+          "period": "annual",
+          "quote": "Property tax: USD 6,000.00 per year.",
+          "provenance": "document"
+        },
+        {
+          "field": "home_insurance",
+          "amount": "1800",
+          "period": "annual",
+          "quote": "Homeowners insurance: USD 1,800.00 per year.",
+          "provenance": "document"
+        },
+        {
+          "field": "mortgage_insurance",
+          "amount": "120",
+          "period": "monthly",
+          "quote": "Mortgage insurance: USD 120.00 per month.",
+          "provenance": "document"
+        },
+        {
+          "field": "hoa",
+          "amount": "150",
+          "period": "monthly",
+          "quote": "HOA fee: USD 150.00 per month.",
+          "provenance": "document"
+        },
+        {
+          "field": "cash_to_close",
+          "amount": "94000",
+          "period": "once",
+          "quote": "Estimated cash to close: USD 94,000.00 one-time.",
+          "provenance": "document"
+        }
+      ],
+      "saved": [
+        {
+          "field": "purchase_price",
+          "amount": "410000",
+          "period": "once",
+          "quote": "Purchase price: USD 410,000.00 one-time.",
+          "provenance": "document"
+        },
+        {
+          "field": "principal_interest",
+          "amount": "2250",
+          "period": "monthly",
+          "quote": "Principal and interest: USD 2,250.00 per month.",
+          "provenance": "document"
+        },
+        {
+          "field": "property_tax",
+          "amount": "4800",
+          "period": "annual",
+          "quote": "Property tax: USD 4,800.00 per year.",
+          "provenance": "document"
+        },
+        {
+          "field": "home_insurance",
+          "amount": "1500",
+          "period": "annual",
+          "quote": "Homeowners insurance: USD 1,500.00 per year.",
+          "provenance": "document"
+        },
+        {
+          "field": "mortgage_insurance",
+          "amount": "0",
+          "period": "monthly",
+          "quote": "Mortgage insurance: USD 0.00 per month.",
+          "provenance": "document"
+        },
+        {
+          "field": "hoa",
+          "amount": "125",
+          "period": "monthly",
+          "quote": "HOA fee: USD 125.00 per month.",
+          "provenance": "document"
+        },
+        {
+          "field": "cash_to_close",
+          "amount": "85000",
+          "period": "once",
+          "quote": "Estimated cash to close: USD 85,000.00 one-time.",
+          "provenance": "document"
+        }
+      ]
+    }
+  }
+]

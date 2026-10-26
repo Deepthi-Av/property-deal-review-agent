@@ -1,0 +1,166 @@
+[
+  {
+    "case": {
+      "case_id": "evidence_complete",
+      "title": "Evidence: complete packet",
+      "description": "A complete control: no question or research is needed.",
+      "is_synthetic": true,
+      "current": {
+        "deal_id": "new",
+        "name": "New purchase",
+        "as_of": "2026-10-23",
+        "source_text": "SYNTHETIC example: New purchase. All figures USD. Fixed-rate financing.\nPayment components below are separate; do not add an escrow total.\nPurchase price: USD 420,000.00 one-time.\nPrincipal and interest: USD 2,300.00 per month.\nProperty tax: USD 6,000.00 per year.\nHomeowners insurance: USD 1,800.00 per year.\nMortgage insurance: USD 120.00 per month.\nHOA fee: USD 150.00 per month.\nEstimated cash to close: USD 94,000.00 one-time.",
+        "documents": []
+      },
+      "saved": {
+        "deal_id": "saved",
+        "name": "Previously reviewed deal",
+        "as_of": "2026-10-20",
+        "source_text": "SYNTHETIC example: Previously reviewed deal. All figures USD. Fixed-rate financing.\nPayment components below are separate; do not add an escrow total.\nPurchase price: USD 410,000.00 one-time.\nPrincipal and interest: USD 2,250.00 per month.\nProperty tax: USD 4,800.00 per year.\nHomeowners insurance: USD 1,500.00 per year.\nMortgage insurance: USD 0.00 per month.\nHOA fee: USD 125.00 per month.\nEstimated cash to close: USD 85,000.00 one-time."
+      }
+    },
+    "expected": {
+      "initial_unresolved": [],
+      "final_monthly_total": "3220.00",
+      "required_issues": [],
+      "required_sources": []
+    },
+    "reviewer_answers": {},
+    "tool_fault": null
+  },
+  {
+    "case": {
+      "case_id": "evidence_elsewhere",
+      "title": "Evidence: insurance in correspondence",
+      "description": "The worksheet omits a cost that is explicitly stated in another supplied source.",
+      "is_synthetic": true,
+      "current": {
+        "deal_id": "new",
+        "name": "New purchase",
+        "as_of": "2026-10-23",
+        "source_text": "SYNTHETIC example: New purchase. All figures USD. Fixed-rate financing.\nPayment components below are separate; do not add an escrow total.\nPurchase price: USD 420,000.00 one-time.\nPrincipal and interest: USD 2,300.00 per month.\nProperty tax: USD 6,000.00 per year.\nMortgage insurance: USD 120.00 per month.\nHOA fee: USD 150.00 per month.\nEstimated cash to close: USD 94,000.00 one-time.",
+        "documents": [
+          {
+            "source_id": "insurance-email",
+            "title": "Insurance cost confirmation",
+            "as_of": "2026-10-23",
+            "text": "SYNTHETIC correspondence. Homeowners insurance for this purchase is USD 165.00 per month. This is the quoted recurring charge for the same property; it is separate from mortgage insurance."
+          }
+        ]
+      },
+      "saved": {
+        "deal_id": "saved",
+        "name": "Previously reviewed deal",
+        "as_of": "2026-10-20",
+        "source_text": "SYNTHETIC example: Previously reviewed deal. All figures USD. Fixed-rate financing.\nPayment components below are separate; do not add an escrow total.\nPurchase price: USD 410,000.00 one-time.\nPrincipal and interest: USD 2,250.00 per month.\nProperty tax: USD 4,800.00 per year.\nHomeowners insurance: USD 1,500.00 per year.\nMortgage insurance: USD 0.00 per month.\nHOA fee: USD 125.00 per month.\nEstimated cash to close: USD 85,000.00 one-time."
+      }
+    },
+    "expected": {
+      "initial_unresolved": [],
+      "final_monthly_total": "3235.00",
+      "required_issues": [],
+      "required_sources": [
+        "current:insurance-email"
+      ]
+    },
+    "reviewer_answers": {},
+    "tool_fault": null
+  },
+  {
+    "case": {
+      "case_id": "evidence_conflict",
+      "title": "Evidence: an unapproved HOA change",
+      "description": "A later email mentions a different figure but does not establish a replacement charge.",
+      "is_synthetic": true,
+      "current": {
+        "deal_id": "new",
+        "name": "New purchase",
+        "as_of": "2026-10-23",
+        "source_text": "SYNTHETIC example: New purchase. All figures USD. Fixed-rate financing.\nPayment components below are separate; do not add an escrow total.\nPurchase price: USD 420,000.00 one-time.\nPrincipal and interest: USD 2,300.00 per month.\nProperty tax: USD 6,000.00 per year.\nHomeowners insurance: USD 1,800.00 per year.\nMortgage insurance: USD 120.00 per month.\nHOA fee: USD 150.00 per month.\nEstimated cash to close: USD 94,000.00 one-time.",
+        "documents": [
+          {
+            "source_id": "hoa-email",
+            "title": "Association discussion about revised dues",
+            "as_of": "2026-10-24",
+            "text": "SYNTHETIC email. HOA fee: USD 190.00 per month. This is an amount under discussion; the association has not voted on it. The worksheet still uses the earlier charge. The date of this email does not establish an agreed replacement."
+          }
+        ]
+      },
+      "saved": {
+        "deal_id": "saved",
+        "name": "Previously reviewed deal",
+        "as_of": "2026-10-20",
+        "source_text": "SYNTHETIC example: Previously reviewed deal. All figures USD. Fixed-rate financing.\nPayment components below are separate; do not add an escrow total.\nPurchase price: USD 410,000.00 one-time.\nPrincipal and interest: USD 2,250.00 per month.\nProperty tax: USD 4,800.00 per year.\nHomeowners insurance: USD 1,500.00 per year.\nMortgage insurance: USD 0.00 per month.\nHOA fee: USD 125.00 per month.\nEstimated cash to close: USD 85,000.00 one-time."
+      }
+    },
+    "expected": {
+      "initial_unresolved": [
+        "hoa"
+      ],
+      "final_monthly_total": "3245.00",
+      "required_issues": [
+        [
+          "hoa",
+          "provisional"
+        ]
+      ],
+      "required_sources": [
+        "current:hoa-email"
+      ]
+    },
+    "reviewer_answers": {
+      "hoa": "175"
+    },
+    "tool_fault": null
+  },
+  {
+    "case": {
+      "case_id": "evidence_placeholder",
+      "title": "Evidence: zero awaiting a broker response",
+      "description": "A numeric entry has a contextual qualification. A source read fails once in the evaluation.",
+      "is_synthetic": true,
+      "current": {
+        "deal_id": "new",
+        "name": "New purchase",
+        "as_of": "2026-10-23",
+        "source_text": "SYNTHETIC example: New purchase. All figures USD. Fixed-rate financing.\nPayment components below are separate; do not add an escrow total.\nPurchase price: USD 420,000.00 one-time.\nPrincipal and interest: USD 2,300.00 per month.\nProperty tax: USD 6,000.00 per year.\nHomeowners insurance: USD 0.00 per month.\nMortgage insurance: USD 120.00 per month.\nHOA fee: USD 150.00 per month.\nEstimated cash to close: USD 94,000.00 one-time.",
+        "documents": [
+          {
+            "source_id": "broker-note",
+            "title": "Explanation of the insurance worksheet entry",
+            "as_of": "2026-10-24",
+            "text": "SYNTHETIC reviewer note about homeowners insurance. We entered zero to keep the worksheet calculations working while we wait for the broker. It is not a price the broker supplied. There is no insurance quote anywhere in this packet."
+          }
+        ]
+      },
+      "saved": {
+        "deal_id": "saved",
+        "name": "Previously reviewed deal",
+        "as_of": "2026-10-20",
+        "source_text": "SYNTHETIC example: Previously reviewed deal. All figures USD. Fixed-rate financing.\nPayment components below are separate; do not add an escrow total.\nPurchase price: USD 410,000.00 one-time.\nPrincipal and interest: USD 2,250.00 per month.\nProperty tax: USD 4,800.00 per year.\nHomeowners insurance: USD 1,500.00 per year.\nMortgage insurance: USD 0.00 per month.\nHOA fee: USD 125.00 per month.\nEstimated cash to close: USD 85,000.00 one-time."
+      }
+    },
+    "expected": {
+      "initial_unresolved": [
+        "home_insurance"
+      ],
+      "final_monthly_total": null,
+      "required_issues": [
+        [
+          "home_insurance",
+          "provisional"
+        ]
+      ],
+      "required_sources": [
+        "current:broker-note"
+      ]
+    },
+    "reviewer_answers": {
+      "home_insurance": null
+    },
+    "tool_fault": {
+      "source_id": "current:broker-note",
+      "failures": 1
+    }
+  }
+]

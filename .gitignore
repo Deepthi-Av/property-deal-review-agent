@@ -1,0 +1,40 @@
+# Credentials and local environment settings. Only the blank template is public.
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+secrets.toml
+secrets.json
+secrets.yaml
+secrets.yml
+credentials.json
+credentials.yaml
+credentials.yml
+*.pem
+*.key
+*.p12
+*.pfx
+.netrc
+.pypirc
+.aws/
+.ssh/
+
+# Local documentation, generated files and uploaded test documents.
+/docs/
+/artifacts/
+/output/
+/tmp/
+*.pdf
+*.docx
+*.zip
+
+# Python and editor caches.
+__pycache__/
+.pytest_cache/
+*.pyc
+.coverage
+htmlcov/
+.vscode/
+.idea/
+
