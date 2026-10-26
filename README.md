@@ -1,4 +1,4 @@
-# home-purchase review
+# Home/property-purchase review App
 
 A prototype that reviews a new home purchase against a comparison deal and
 two buyer-defined limits. Synthetic examples are the default; users can also select
